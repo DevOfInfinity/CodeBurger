@@ -32,6 +32,11 @@ h1 {
     text-align: center;
     margin-top: 100px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
 `
 
 export const Label = styled.p`
@@ -51,7 +56,7 @@ export const Input = styled.input`
     background: #FFFFFF;
     box-shadow: 3px 3px 10px rgba(74, 144, 226, 0.19);
     border-radius: 5px;
-    border: none;
+    border: ${props => (props.error ? '2px solid #CC1717' : 'none')};
     padding-left: 10px;
 `
 
@@ -92,4 +97,12 @@ a {
     cursor: pointer;
     text-decoration: underline;
 }
+`
+export const ErrorText = styled.p`
+    color: #CC1717;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 2px;
 `
